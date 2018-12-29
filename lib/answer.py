@@ -75,6 +75,6 @@ class Answer:
         return self._answer
 
     def __len__(self):
-    return len(self._answer)
+        return len(self._answer)
 
     answer = property(_reveal)
