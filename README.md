@@ -54,3 +54,9 @@ License:
 --------
 
 Released under the GPLv3.
+
+Addition of Jeopardy questions:
+-------------------------------
+I added Jeopardy trivia questions, that were pulled from a JSON file found in the GitHub Repo
+https://github.com/epitron/trebek/tree/master/questions
+The questions were parsed into files of 5000 questions each, including date & money worth.
