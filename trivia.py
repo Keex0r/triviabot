@@ -143,17 +143,17 @@ class triviabot(irc.IRCClient):
         '''
         Actions to perform on signon to the server.
         '''
-		#Authenticate with Q if needed
-		if (config.Q_AUTHNAME and config.Q_AUTHPW):
-			self.msg("Q@CServe.quakenet.org", "AUTH " + config.Q_AUTHNAME + " " + config.Q_AUTHPW)
-			self.DoLog("Sent AUTH to Q for " + config.Q_AUTHNAME)
-		#Set mode +x if chosen
-		if (config.SET_MODE_X):
-			self.mode(self.nickname, True, 'x')
-			self.DoLog("Set mode +x for " + self.nickname)
-		ChannelPW = ""
-		if (config.CHANNEL_KEY):
-			ChannelPW = " " + config.CHANNEL_KEY
+        #Authenticate with Q if needed
+        if (config.Q_AUTHNAME and config.Q_AUTHPW):
+            self.msg("Q@CServe.quakenet.org", "AUTH " + config.Q_AUTHNAME + " " + config.Q_AUTHPW)
+            self.DoLog("Sent AUTH to Q for " + config.Q_AUTHNAME)
+        #Set mode +x if chosen
+        if (config.SET_MODE_X):
+            self.mode(self.nickname, True, 'x')
+            self.DoLog("Set mode +x for " + self.nickname)
+        ChannelPW = ""
+        if (config.CHANNEL_KEY):
+            ChannelPW = " " + config.CHANNEL_KEY
         self.join(self._game_channel + ChannelPW)
         self.msg("NickServ", "identify {}".format(config.IDENT_STRING))
         print("Signed on as {}.".format(self.nickname))
@@ -171,22 +171,22 @@ class triviabot(irc.IRCClient):
         '''
         print("Joined {}.".format((channel)))
 
-	def DoLog(self, message):
-		'''
-		Writes a message to the logfile
-		'''
-		if(not config.LOGFILE):
-			return
-		date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-		with open(config.LOGFILE, 'a') as logfile:
-			logfile.write("[" + date + "] " + message + '\n')
+    def DoLog(self, message):
+        '''
+        Writes a message to the logfile
+        '''
+        if(not config.LOGFILE):
+            return
+        date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(config.LOGFILE, 'a') as logfile:
+            logfile.write("[" + date + "] " + message + '\n')
 
     def privmsg(self, user, channel, msg):
         '''
         Parses out each message and initiates doing the right thing
         with it.
         '''
-		self.DoLog(user + " : " + channel + " : " + msg)
+        self.DoLog(user + " : " + channel + " : " + msg)
         user, temp = user.split('!')
         print(user + " : " + channel + " : " + msg)
         # need to strip out non-printable characters if present.
