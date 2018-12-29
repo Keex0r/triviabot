@@ -19,6 +19,9 @@ SET_MODE_X = False
 #Log file
 LOGFILE = './Bot_Log.txt'
 
+#Option to repeat the question on every clues
+REPEAT_QUESTION_ON_CLUE = False
+
 # Nick of person running this bot? (the nick included here will be
 # automatically added to the list of ADMINS)
 # It will be displayed to user when ?help option is run

@@ -127,14 +127,14 @@ class triviabot(irc.IRCClient):
         # we must be somewhere in between
         elif self._clue_number < 4:
             self._current_points = points[self._clue_number]
-            self._gmsg("Question:")
-            self._gmsg(self._question)
+            if (config.REPEAT_QUESTION_ON_CLUE):
+                self._gmsg("Question:")
+                self._gmsg(self._question)
             self._gmsg("Clue: {}".format(self._answer.give_clue()))
             self._clue_number += 1
         # no one must have gotten it.
         else:
-            self._gmsg("No one got it. The answer was: {}"
-                       .format(self._answer.answer))
+            self._gmsg("No one got it. The answer was: {}".format(self._answer.answer))
             self._clue_number = 0
             self._get_new_question()
             # self._lc.reset()
