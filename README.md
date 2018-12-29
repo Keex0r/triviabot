@@ -55,6 +55,14 @@ License:
 
 Released under the GPLv3.
 
+Changes in this fork:
+---------------------
+- Added option for channel key (password)
+- Added QuakeNet Q functionality, namely AUTH and mode +x
+- Added option to remove repetition of question on each clue (less clutter)
+- Added Jeopardy trivia question pack (source see below)
+- Added Log file
+
 Addition of Jeopardy questions:
 -------------------------------
 I added Jeopardy trivia questions, that were pulled from a JSON file found in the GitHub Repo
