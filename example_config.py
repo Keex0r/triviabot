@@ -6,7 +6,18 @@
 # Copy this file to 'config.py', then edit 'config.py' to
 # set your preferences.
 
+#The game channel that the bot is running in and if required its channel key (password)
 GAME_CHANNEL = '#triviachannel'
+CHANNEL_KEY = ''
+
+#Support for the QuakeNet Q Bot. This bot will auth automatically
+Q_AUTHNAME = ''
+Q_AUTHPW = ''
+#Mode +x in QuakeNet hides the hostname
+SET_MODE_X = False
+
+#Log file
+LOGFILE = './Bot_Log.txt'
 
 # Nick of person running this bot? (the nick included here will be
 # automatically added to the list of ADMINS)
@@ -17,10 +28,13 @@ ADMINS = ['admin']
 # or a comma separated list
 # ADMINS = ['admin','admin2']
 
-Q_DIR = './questions/'
+#Path to the questions
+Q_DIR = './questions/jeopardy/'
 
+#Path to the saved data
 SAVE_DIR = './savedata/'
 
+#NickServ identification string
 IDENT_STRING = 'password'
 
 # Time (in seconds) between clues, and the wait time between questions.
